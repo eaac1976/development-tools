@@ -35,7 +35,7 @@ Logging in to Docker Hub is necessary if you want to push your own custom images
 Best Practice: Use a Personal Access Token
 For security reasons, it is highly recommended to use a Personal Access Token (PAT) instead of your actual Docker Hub password when logging in from the command line.
 
-Generate a Token on Docker Hub:
+1. Generate a Token on Docker Hub
 
 Log in to your account on the Docker Hub website.
 
