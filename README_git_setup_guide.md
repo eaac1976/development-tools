@@ -1,99 +1,69 @@
-Git Configuration Guide for Ubuntu
-This guide provides the step-by-step instructions to install and configure Git on a new Ubuntu or Debian-based Linux system.
+# Git Installation and Configuration Guide
 
-# Step 1: Open Your Terminal
-You can open the terminal in Ubuntu by:
+This guide provides step-by-step instructions for installing Git on Ubuntu and configuring it for secure authentication and recommended settings.
 
-Pressing the keyboard shortcut Ctrl+Alt+T.
+## Part 1: Installing Git
 
-Searching for "Terminal" in your applications menu.
+To install Git, open your terminal and run:
 
-# Step 2: Install Git
-First, update your system's package list to ensure you get the latest version available. Then, install Git.
-
-Update the package list
+```bash
 sudo apt update
-
-Install Git
 sudo apt install git
+```
 
-You will be prompted for your password and asked to confirm the installation by pressing Y.
+## Part 2: Configuring Git
 
-After the installation is complete, verify it by checking the Git version.
+After installation, configure your user name and email:
 
-Verify the installation
-git --version
-
-This command should output the installed version number, for example: git version 2.43.0.
-
-# Step 3: Configure Your Git Identity
-This is a crucial one-time setup. You must tell Git your name and email address. This information will be embedded into every commit you make.
-
-Replace "Your Name" and "youremail@example.com" with your actual name and email address (the same one you use for GitHub).
-
-Set your user name
+```bash
 git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
 
-Set your user email
-git config --global user.email "youremail@example.com"
+You can verify your configuration with:
 
-# Step 4: Set the Default Branch Name (Recommended)
-By default, Git used to name the primary branch master. The modern standard is now main. This command configures Git to use main as the default name for the first branch in all new repositories you create.
+```bash
+git config --list
+```
 
-git config --global init.defaultBranch main
+## Part 3: Recommended Settings
 
-# Step 5: Choose a Default Text Editor (Optional)
-Git sometimes needs to open a text editor for you to type messages (for example, during a complex merge). You can configure your favorite editor.
+Set recommended options for better usability:
 
-For Nano (easiest for beginners):
-
-git config --global core.editor "nano"
-
-For Visual Studio Code:
-
+```bash
 git config --global core.editor "code --wait"
+git config --global color.ui auto
+git config --global pull.rebase false
+```
 
-For Vim (if you're familiar with it):
+## Part 4: Secure Authentication with Git Credential Manager
 
-git config --global core.editor "vim"
+To securely store your credentials, install Git Credential Manager:
 
-# Step 6: Verify Your Configuration
-To check that all your settings have been applied correctly, you can list your global configurations.
+1. Download the latest `.deb` package from the [Git Credential Manager releases page](https://github.com/GitCredentialManager/git-credential-manager/releases).
 
-git config --list --global
+2. Install the package (replace the filename with the actual downloaded file):
 
-You should see the user.name, user.email, init.defaultBranch, and core.editor that you just set.
+   ```bash
+   sudo dpkg -i git-credential-manager-*.deb
+   ```
 
-# Step 7: Configure Secure Authentication with Git Credential Manager (Recommended)
-To avoid entering a password or token every time you connect to GitHub, you should use the official Git Credential Manager (GCM). It securely connects to your GitHub account using a browser-based login.
+3. Enable Git Credential Manager:
 
-1. Download GCM
+   ```bash
+   git-credential-manager configure
+   ```
 
-Go to the GCM Official Releases Page.
+## Part 5: Testing Your Setup
 
-Find and download the latest Linux Debian file, which ends in _amd64.deb.
+Clone a repository to test your configuration:
 
-2. Install GCM
+```bash
+git clone https://github.com/yourusername/your-repo.git
+```
 
-Open your terminal, navigate to your Downloads folder, and run the installation command.
+If prompted for credentials, Git Credential Manager will handle authentication securely.
 
-Navigate to where you downloaded the file
-cd ~/Downloads
+---
 
-Install the package (replace * with the actual version number if needed)
-sudo dpkg -i gcm-linux_amd64_*.deb
-
-3. Configure Git to use GCM
-
-After installation, run this command to configure Git automatically:
-
-git-credential-manager configure
-
-4. Log in via Browser
-
-The next time you run git push or git pull, GCM will automatically open your web browser.
-
-Log in to GitHub and click "Authorize" when prompted. Your credentials will then be securely stored.
-
-✅ You're All Set!
-Git is now fully installed, configured, and connected securely to GitHub on your Ubuntu laptop. You are ready to create or clone repositories without needing to manually handle passwords or tokens.
+For more details, see the [official Git documentation](https://git-scm.com/doc).
