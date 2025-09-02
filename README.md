@@ -1,38 +1,40 @@
-# development-tools
+# Development Tools Setup
 
 A collection of shell scripts and guides to quickly set up a fresh Ubuntu system with essential development tools.
 
-## Contents
+## Table of Contents
 
-- **[scripts/install_docker.sh](scripts/install_docker.sh)**  
-  Automates the installation of Docker Engine and Docker Compose on Ubuntu.  
-  See [README_docker_setup_guide.md](README_docker_setup_guide.md) for detailed instructions.
+- [Docker Installation Script](scripts/install_docker.sh)
+- [Docker Setup Guide](README_docker_setup_guide.md)
+- [Git Setup Guide](README_git_setup_guide.md)
+- [Visual Studio Code Setup Guide](README_visual_studio_code_setup_guide.md)
+- [Git for Beginners Guide](README_git_for_begginers_guide.md)
 
-- **[README_docker_setup_guide.md](README_docker_setup_guide.md)**  
-  Step-by-step guide for installing Docker, verifying the installation, and logging in to Docker Hub securely.
+## Quick Start
 
-- **[README_git_setup_guide.md](README_git_setup_guide.md)**  
-  Instructions for installing and configuring Git, including recommended settings and secure authentication using Git Credential Manager.
+### 1. Docker Setup
 
-- **[README_visual_studio_code_setup_guide.md](README_visual_studio_code_setup_guide.md)**  
-  Guide for installing Visual Studio Code on Ubuntu and enabling Settings Sync to synchronize your extensions, themes, and preferences across devices.
+```bash
+chmod +x scripts/install_docker.sh
+./scripts/install_docker.sh
+```
+Log out and log back in to apply group changes, then verify installation:
+```bash
+docker run hello-world
+```
+See [Docker Setup Guide](README_docker_setup_guide.md) for more details.
 
-## Usage
+### 2. Git Setup
 
-1. **Docker Setup**
-   - Make the script executable:  
-     `chmod +x scripts/install_docker.sh`
-   - Run the installation script:  
-     `./scripts/install_docker.sh`
-   - Log out and log back in to apply group changes.
-   - Verify installation:  
-     `docker run hello-world`
+Follow the steps in [Git Setup Guide](README_git_setup_guide.md) to install and configure Git.
 
-2. **Git Setup**
-   - Follow the steps in [README_git_setup_guide.md](README_git_setup_guide.md) to install and configure Git.
+### 3. Visual Studio Code Setup
 
-3. **Visual Studio Code Setup**
-   - Follow the instructions in [README_visual_studio_code_setup_guide.md](README_visual_studio_code_setup_guide.md) to install VS Code and enable Settings Sync for a seamless coding environment across machines.
+See [VS Code Setup Guide](README_visual_studio_code_setup_guide.md) for installation and settings sync instructions.
+
+### 4. Git for Beginners
+
+New to Git? Check out [Git for Beginners Guide](README_git_for_begginers_guide.md) for a friendly introduction.
 
 ## License
 
