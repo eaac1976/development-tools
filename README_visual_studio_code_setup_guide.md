@@ -1,8 +1,8 @@
-Visual Studio Code Installation and Configuration on Ubuntu
+# Visual Studio Code Installation and Configuration on Ubuntu
 
 This guide provides instructions on how to install Visual Studio Code (VS Code) on Ubuntu and how to log in to sync your settings, extensions, and themes across multiple machines.
 
-Part 1: Installing Visual Studio Code
+# Part 1: Installing Visual Studio Code
 
 The recommended way to install VS Code is by using the official Debian package (.deb) provided by Microsoft. This method also adds the official Microsoft repository to your system, so you will receive updates automatically through the standard "Software Update" utility.
 
@@ -17,19 +17,19 @@ On that page, click the button for .deb (Debian, Ubuntu).
 2. Install the Package
 Open your terminal and navigate to your Downloads directory (or wherever you saved the file).
 
-# Navigate to your Downloads folder
+## Navigate to your Downloads folder
 cd ~/Downloads
 
 
 Now, use the apt install command to install the package. This command is preferred over dpkg because it automatically handles any required dependencies. Replace the filename if it's different.
 
-# Use the actual filename you downloaded
+## Use the actual filename you downloaded
 sudo apt install ./code_*.deb
 
 
 Enter your password when prompted. Once the installation is complete, you can launch VS Code from your applications menu.
 
-Part 2: Logging in with Settings Sync
+# Part 2: Logging in with Settings Sync
 
 VS Code does not require a login to be used, but logging in is highly recommended to sync your personal configuration. The "Settings Sync" feature allows you to use your GitHub or Microsoft account to save your settings, keyboard shortcuts, extensions, and UI layout to the cloud.
 
