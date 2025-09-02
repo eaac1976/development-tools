@@ -64,5 +64,36 @@ git config --list --global
 
 You should see the user.name, user.email, init.defaultBranch, and core.editor that you just set.
 
+Step 7: Configure Secure Authentication with Git Credential Manager (Recommended)
+To avoid entering a password or token every time you connect to GitHub, you should use the official Git Credential Manager (GCM). It securely connects to your GitHub account using a browser-based login.
+
+1. Download GCM
+
+Go to the GCM Official Releases Page.
+
+Find and download the latest Linux Debian file, which ends in _amd64.deb.
+
+2. Install GCM
+
+Open your terminal, navigate to your Downloads folder, and run the installation command.
+
+# Navigate to where you downloaded the file
+cd ~/Downloads
+
+# Install the package (replace * with the actual version number if needed)
+sudo dpkg -i gcm-linux_amd64_*.deb
+
+3. Configure Git to use GCM
+
+After installation, run this command to configure Git automatically:
+
+git-credential-manager configure
+
+4. Log in via Browser
+
+The next time you run git push or git pull, GCM will automatically open your web browser.
+
+Log in to GitHub and click "Authorize" when prompted. Your credentials will then be securely stored.
+
 ✅ You're All Set!
-Git is now fully installed and configured on your Ubuntu laptop. You are ready to create or clone repositories.
+Git is now fully installed, configured, and connected securely to GitHub on your Ubuntu laptop. You are ready to create or clone repositories without needing to manually handle passwords or tokens.
