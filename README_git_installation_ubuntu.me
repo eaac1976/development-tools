@@ -1,0 +1,68 @@
+Git Configuration Guide for Ubuntu
+This guide provides the step-by-step instructions to install and configure Git on a new Ubuntu or Debian-based Linux system.
+
+Step 1: Open Your Terminal
+You can open the terminal in Ubuntu by:
+
+Pressing the keyboard shortcut Ctrl+Alt+T.
+
+Searching for "Terminal" in your applications menu.
+
+Step 2: Install Git
+First, update your system's package list to ensure you get the latest version available. Then, install Git.
+
+# Update the package list
+sudo apt update
+
+# Install Git
+sudo apt install git
+
+You will be prompted for your password and asked to confirm the installation by pressing Y.
+
+After the installation is complete, verify it by checking the Git version.
+
+# Verify the installation
+git --version
+
+This command should output the installed version number, for example: git version 2.43.0.
+
+Step 3: Configure Your Git Identity
+This is a crucial one-time setup. You must tell Git your name and email address. This information will be embedded into every commit you make.
+
+Replace "Your Name" and "youremail@example.com" with your actual name and email address (the same one you use for GitHub).
+
+# Set your user name
+git config --global user.name "Your Name"
+
+# Set your user email
+git config --global user.email "youremail@example.com"
+
+Step 4: Set the Default Branch Name (Recommended)
+By default, Git used to name the primary branch master. The modern standard is now main. This command configures Git to use main as the default name for the first branch in all new repositories you create.
+
+git config --global init.defaultBranch main
+
+Step 5: Choose a Default Text Editor (Optional)
+Git sometimes needs to open a text editor for you to type messages (for example, during a complex merge). You can configure your favorite editor.
+
+For Nano (easiest for beginners):
+
+git config --global core.editor "nano"
+
+For Visual Studio Code:
+
+git config --global core.editor "code --wait"
+
+For Vim (if you're familiar with it):
+
+git config --global core.editor "vim"
+
+Step 6: Verify Your Configuration
+To check that all your settings have been applied correctly, you can list your global configurations.
+
+git config --list --global
+
+You should see the user.name, user.email, init.defaultBranch, and core.editor that you just set.
+
+✅ You're All Set!
+Git is now fully installed and configured on your Ubuntu laptop. You are ready to create or clone repositories.
