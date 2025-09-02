@@ -14,6 +14,9 @@ A collection of shell scripts and guides to quickly set up a fresh Ubuntu system
 - **[README_git_setup_guide.md](README_git_setup_guide.md)**  
   Instructions for installing and configuring Git, including recommended settings and secure authentication using Git Credential Manager.
 
+- **[README_visual_studio_code_setup_guide.md](README_visual_studio_code_setup_guide.md)**  
+  Guide for installing Visual Studio Code on Ubuntu and enabling Settings Sync to synchronize your extensions, themes, and preferences across devices.
+
 ## Usage
 
 1. **Docker Setup**
@@ -27,6 +30,9 @@ A collection of shell scripts and guides to quickly set up a fresh Ubuntu system
 
 2. **Git Setup**
    - Follow the steps in [README_git_setup_guide.md](README_git_setup_guide.md) to install and configure Git.
+
+3. **Visual Studio Code Setup**
+   - Follow the instructions in [README_visual_studio_code_setup_guide.md](README_visual_studio_code_setup_guide.md) to install VS Code and enable Settings Sync for a seamless coding environment across machines.
 
 ## License
 
