@@ -54,7 +54,6 @@ This is the most critical phase. We will use the extension's setup wizard to dow
         * Clone the specified version of ESP-IDF from GitHub into `~/esp-idf/`.
         * Download and install all required compilers and tools into `~/.espressif/`.
     * This process can take a significant amount of time (15-30 minutes or more) depending on your internet connection.
-    ***Note:** If you need to customize the installation paths, you can use the "Advanced" option instead.*
 
 ---
 
@@ -66,3 +65,32 @@ Once the installation is complete, you can verify that everything is working cor
 2.  Look at the blue **status bar** at the bottom of the VS Code window. You should see indicators for the ESP-IDF version, the target board, the serial port, and the build/flash/monitor buttons.
 
 If you see these controls, your installation was successful, and you are ready to open and build your ESP-IDF projects.
+
+---
+
+### **Phase 5: Optional - UI Development with LVGL Editor**
+
+To visually design your user interface, you can use the official LVGL Editor. It runs as an AppImage on Linux, which requires a specific library to be installed first.
+
+1.  **Install the FUSE Library**:
+    AppImage applications require the FUSE (Filesystem in Userspace) library to run. Open a terminal and install `libfuse2`:
+    ```bash
+    sudo apt install libfuse2
+    ```
+
+2.  **Download the LVGL Editor**:
+    * Go to the official LVGL Editor website to download the latest AppImage for Linux:
+    * **[https://lvgl.io/editor](https://lvgl.io/editor)**
+
+3.  **Run the Editor**:
+    * Open a terminal in the directory where you downloaded the file.
+    * **Make the AppImage executable**:
+      ```bash
+      chmod +x LVGL-Editor-vX.X.X.AppImage
+      ```
+      *(Replace `vX.X.X` with the actual version number you downloaded.)*
+    * **Run the application**:
+      ```bash
+      ./LVGL-Editor-vX.X.X.AppImage
+      ```
+    The LVGL Editor will now launch, allowing you to drag and drop UI components and export them as C code.
