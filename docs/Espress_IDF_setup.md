@@ -8,7 +8,7 @@ This setup ensures all prerequisites are installed, uses an isolated Python virt
 
 ### **Phase 1: System Prerequisites**
 
-Before installing the extension, you must ensure your system has the necessary tools. While modern Linux distributions often include them, it is safest to run this command to guarantee they are present.
+Before installing the extension, you must ensure your system has the necessary tools and permissions.
 
 1.  **Open a terminal** on your Linux machine.
 
@@ -17,6 +17,13 @@ Before installing the extension, you must ensure your system has the necessary t
     sudo apt update && sudo apt install git python3-pip python3-venv
     ```
     *This command ensures `git`, `pip`, and `venv` are available for the setup wizard.*
+
+3.  **Grant Serial Port Permissions (Crucial Step)**:
+    To allow your user account to access the ESP32's serial port for flashing, you must add it to the `dialout` group.
+    ```bash
+    sudo usermod -a -G dialout $USER
+    ```
+    *After running this command, you **must reboot your computer** or log out and log back in for this change to take effect.*
 
 ---
 
